@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/_Solution Items/">
+    <File Path="../.gitignore" />
+    <File Path="../Benchmark.bat" />
+    <File Path="../README.md" />
+    <File Path=".editorconfig" />
+    <File Path="NuGet.config" />
+  </Folder>
+  <Folder Name="/_Solution Items/workflows/">
+    <File Path="../.github/workflows/ContinuousIntegration.yml" />
+    <File Path="../.github/workflows/PullRequest.yml" />
+  </Folder>
+  <Project Path="Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj" />
+</Solution>
