@@ -46,7 +46,7 @@ namespace Ecs.CSharp.Benchmark
         [Benchmark]
         public void Exanite()
         {
-            UpdateExaniteQuery();
+            UpdateExaniteQuery([_exanite.World]);
         }
 
         [Query]
