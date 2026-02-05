@@ -111,11 +111,11 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MorpehContext _context;
 
-        [BenchmarkCategory(Categories.Morpeh)]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         [Benchmark]
         public void Morpeh_Direct() => _context.MonoThreadDirectSystem.OnUpdate(0f);
 
-        [BenchmarkCategory(Categories.Morpeh)]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         [Benchmark]
         public void Morpeh_Stash() => _context.MonoThreadStashSystem.OnUpdate(0f);
     }

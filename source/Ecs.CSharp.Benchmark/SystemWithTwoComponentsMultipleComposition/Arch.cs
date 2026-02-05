@@ -77,7 +77,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly ArchContext _arch;
         private ForEach2 _forEach2;
 
-        [BenchmarkCategory(Categories.Arch)]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         [Benchmark]
         public void Arch()
         {
@@ -85,14 +85,14 @@ namespace Ecs.CSharp.Benchmark
             world.InlineQuery<ForEach2, Component1, Component2>(in _queryDescription, ref _forEach2);
         }
         
-        [BenchmarkCategory(Categories.Arch)]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         [Benchmark]
         public void Arch_MonoThread_SourceGenerated()
         {
             ForEachQuery(_arch.World);
         }
         
-        [BenchmarkCategory(Categories.Arch)]
+        [BenchmarkCategory(Categories.Arch, Categories.MultiThreaded)]
         [Benchmark]
         public void Arch_MultiThread()
         {
