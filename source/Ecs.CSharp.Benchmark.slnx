@@ -11,9 +11,9 @@
     <File Path="../.github/workflows/PullRequest.yml" />
   </Folder>
   <Project Path="../../Exanite.GameDev/projects/Exanite.CodeGen/Exanite.CodeGen.csproj" />
-  <Project Path="../../Exanite.GameDev/projects/Exanite.Engine.Analyzers/Exanite.Engine.Analyzers.csproj" />
-  <Project Path="../../Exanite.GameDev/projects/Myriad.Ecs/Myriad.Ecs/Myriad.Ecs.csproj" />
   <Project Path="../../Exanite.GameDev/projects/Exanite.Core/Exanite.Core.csproj" />
+  <Project Path="../../Exanite.GameDev/projects/Exanite.Engine.Analyzers/Exanite.Engine.Analyzers.csproj" />
   <Project Path="../../Exanite.GameDev/projects/Exanite.Engine/Exanite.Engine.csproj" />
+  <Project Path="../../Exanite.GameDev/projects/Myriad.Ecs/Myriad.Ecs/Myriad.Ecs.csproj" />
   <Project Path="Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj" />
 </Solution>
