@@ -66,11 +66,11 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly DefaultEcsContext _defaultEcs;
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.SingleThreaded)]
         [Benchmark]
         public void DefaultEcs_MonoThread() => _defaultEcs.MonoThreadEntitySetSystem.Update(0);
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.MultiThreaded)]
         [Benchmark]
         public void DefaultEcs_MultiThread() => _defaultEcs.MultiThreadEntitySetSystem.Update(0);
     }

@@ -40,14 +40,14 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.TinyEcs)]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
         [Benchmark]
         public void TinyEcs_Each()
         {
             _tinyEcs.Query.Each((ref Component1 c1, ref Component2 c2) => c1.Value += c2.Value);
         }
 
-        [BenchmarkCategory(Categories.TinyEcs)]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.MultiThreaded)]
         [Benchmark]
         public void TinyEcs_EachJob()
         {

@@ -43,7 +43,7 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.FlecsNet)]
+        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded)]
         [Benchmark]
         public void FlecsNet_Each()
         {
@@ -53,7 +53,7 @@ namespace Ecs.CSharp.Benchmark
             });
         }
 
-        [BenchmarkCategory(Categories.FlecsNet)]
+        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded)]
         [Benchmark]
         public void FlecsNet_Iter()
         {

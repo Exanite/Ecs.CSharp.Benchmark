@@ -23,7 +23,7 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Exanite)]
+        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded)]
         [Benchmark]
         public void Exanite()
         {

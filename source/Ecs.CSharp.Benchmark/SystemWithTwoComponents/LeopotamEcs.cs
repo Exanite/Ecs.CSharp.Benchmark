@@ -56,7 +56,7 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly LeopotamEcsContext _leopotamEcs;
 
-        [BenchmarkCategory(Categories.LeopotamEcs)]
+        [BenchmarkCategory(Categories.LeopotamEcs, Categories.SingleThreaded)]
         [Benchmark]
         public void LeopotamEcs() => _leopotamEcs.MonoThreadSystem.Run();
     }
