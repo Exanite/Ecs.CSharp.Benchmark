@@ -48,7 +48,7 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MyriadContext _myriad;
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
         public void Myriad_SingleThread()
         {
@@ -56,7 +56,7 @@ namespace Ecs.CSharp.Benchmark
             world.Execute<MyriadForEach3, Component1, Component2, Component3>(new MyriadForEach3());
         }
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         [Benchmark]
         public void Myriad_MultiThread()
         {
@@ -64,7 +64,7 @@ namespace Ecs.CSharp.Benchmark
             world.ExecuteParallel<MyriadForEach3, Component1, Component2, Component3>(new MyriadForEach3());
         }
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
         public void Myriad_SingleThreadChunk()
         {
@@ -72,7 +72,7 @@ namespace Ecs.CSharp.Benchmark
             world.ExecuteChunk<MyriadForEach3, Component1, Component2, Component3>(new MyriadForEach3());
         }
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         [Benchmark]
         public void Myriad_MultiThreadChunk()
         {
@@ -80,7 +80,7 @@ namespace Ecs.CSharp.Benchmark
             world.ExecuteChunkParallel<MyriadForEach3, Component1, Component2, Component3>(new MyriadForEach3());
         }
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
         public void Myriad_Enumerable()
         {
@@ -92,7 +92,7 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Myriad)]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
         public void Myriad_Delegate()
         {
