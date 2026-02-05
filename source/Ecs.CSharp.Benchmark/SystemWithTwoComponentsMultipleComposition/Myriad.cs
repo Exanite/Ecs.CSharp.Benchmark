@@ -45,7 +45,6 @@ namespace Ecs.CSharp.Benchmark
         private sealed class MyriadContext : MyriadBaseContext
         {
             public MyriadContext(int entityCount)
-                : base()
             {
                 CommandBuffer cmd = new CommandBuffer(World);
                 for (int i = 0; i < entityCount; i++)

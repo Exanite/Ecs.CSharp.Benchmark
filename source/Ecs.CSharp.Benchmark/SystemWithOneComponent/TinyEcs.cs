@@ -12,7 +12,7 @@ namespace Ecs.CSharp.Benchmark
         private sealed class TinyEcsContext : TinyEcsBaseContext
         {
             public Query<Component1> Query { get; }
-            public TinyEcsContext(int entityCount, int entityPadding) : base()
+            public TinyEcsContext(int entityCount, int entityPadding)
             {
                 for (int i = 0; i < entityCount; ++i)
                 {

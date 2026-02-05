@@ -35,7 +35,6 @@ namespace Ecs.CSharp.Benchmark
             // always sequential in memory no matter what else is attached to the entity. So no need to respect
             // the padding input
             public MyriadContext(int entityCount, int _)
-                : base()
             {
                 CommandBuffer cmd = new CommandBuffer(World);
                 for (int i = 0; i < entityCount; i++)

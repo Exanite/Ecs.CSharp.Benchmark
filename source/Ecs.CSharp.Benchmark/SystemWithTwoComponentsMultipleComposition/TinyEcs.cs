@@ -19,7 +19,7 @@ namespace Ecs.CSharp.Benchmark
             public Query Query { get; }
 
             
-            public TinyEcsContext(int entityCount) : base()
+            public TinyEcsContext(int entityCount)
             {
                 for (int i = 0; i < entityCount; ++i)
                 {

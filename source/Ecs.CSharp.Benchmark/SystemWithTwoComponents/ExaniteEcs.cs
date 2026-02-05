@@ -12,7 +12,7 @@ namespace Ecs.CSharp.Benchmark
 
         private sealed class ExaniteContext : ExaniteBaseContext
         {
-            public ExaniteContext(int entityCount, int _) : base()
+            public ExaniteContext(int entityCount, int _)
             {
                 for (int i = 0; i < entityCount; i++)
                 {
