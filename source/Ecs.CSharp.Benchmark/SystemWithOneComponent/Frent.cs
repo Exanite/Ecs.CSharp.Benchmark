@@ -41,22 +41,22 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryInline()
         {
             _frent.Query.Inline<Increment, Component1>(default);
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryDelegate()
         {
             _frent.Query.Delegate((ref Component1 c) => c.Value++);
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_Simd()
         {
             Vector256<int> sum = Vector256.Create(1);

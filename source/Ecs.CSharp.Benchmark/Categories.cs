@@ -21,5 +21,8 @@
 
         public const string CreateEntity = "CreateEntity";
         public const string System = "System";
+
+        public const string SingleThreaded = "SingleThreaded";
+        public const string MultiThreaded = "MultiThreaded";
     }
 }

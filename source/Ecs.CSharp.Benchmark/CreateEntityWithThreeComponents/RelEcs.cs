@@ -8,8 +8,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly RelEcsBaseContext _relEcs;
 
-        [BenchmarkCategory(Categories.RelEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.RelEcs, Categories.SingleThreaded)]
         public void RelEcs()
         {
             for (int i = 0; i < EntityCount; ++i)

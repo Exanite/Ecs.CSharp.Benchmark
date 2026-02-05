@@ -9,8 +9,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MorpehBaseContext _context;
 
-        [BenchmarkCategory(Categories.Morpeh)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         public void Morpeh_Direct()
         {
             World world = _context.World;
@@ -22,8 +22,8 @@ namespace Ecs.CSharp.Benchmark
             world.Commit();
         }
 
-        [BenchmarkCategory(Categories.Morpeh)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         public void Morpeh_Stash()
         {
             World world = _context.World;

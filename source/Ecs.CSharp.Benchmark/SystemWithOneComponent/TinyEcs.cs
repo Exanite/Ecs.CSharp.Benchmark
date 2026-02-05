@@ -28,15 +28,15 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.TinyEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
         public void TinyEcs_Each()
         {
             _tinyEcs.Query.Each((ref Component1 c1) => c1.Value++);
         }
 
-        [BenchmarkCategory(Categories.TinyEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
         public void TinyEcs_EachJob()
         {
             _tinyEcs.Query.EachJob((ref Component1 c1) => c1.Value++);

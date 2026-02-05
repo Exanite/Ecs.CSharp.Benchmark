@@ -14,8 +14,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly ArchBaseContext _arch;
 
-        [BenchmarkCategory(Categories.Arch)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         public void Arch()
         {
             World world = _arch.World;

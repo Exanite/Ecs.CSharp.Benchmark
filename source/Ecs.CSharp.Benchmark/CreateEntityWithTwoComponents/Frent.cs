@@ -13,8 +13,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly FrentBaseContext _frent;
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent()
         {
             World world = _frent.World;
@@ -24,8 +24,8 @@ namespace Ecs.CSharp.Benchmark
                 world.Create<Component1, Component2>(default, default);
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_Bulk()
         {
             World world = _frent.World;

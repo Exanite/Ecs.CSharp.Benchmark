@@ -8,8 +8,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MonoGameExtendedBaseContext _monoGameExtended;
 
-        [BenchmarkCategory(Categories.MonoGameExtended)]
         [Benchmark]
+        [BenchmarkCategory(Categories.MonoGameExtended, Categories.SingleThreaded)]
         public void MonoGameExtended()
         {
             for (int i = 0; i < EntityCount; ++i)
