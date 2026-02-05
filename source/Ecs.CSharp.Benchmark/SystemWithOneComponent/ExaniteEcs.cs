@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
-using Ecs.CSharp.Benchmark.Contexts.ExaniteEcs_Components;
+using Ecs.CSharp.Benchmark.Contexts.Exanite_Components;
 using Exanite.Engine.Ecs.Queries;
 
 namespace Ecs.CSharp.Benchmark
@@ -8,11 +8,11 @@ namespace Ecs.CSharp.Benchmark
     public partial class SystemWithOneComponent
     {
         [Context]
-        private readonly ExaniteEcsContext _exaniteEcs;
+        private readonly ExaniteContext _exanite;
 
-        private sealed class ExaniteEcsContext : ExaniteEcsBaseContext
+        private sealed class ExaniteContext : ExaniteBaseContext
         {
-            public ExaniteEcsContext(int entityCount, int _) : base()
+            public ExaniteContext(int entityCount, int _) : base()
             {
                 for (int i = 0; i < entityCount; i++)
                 {
@@ -23,15 +23,15 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.ExaniteEcs)]
+        [BenchmarkCategory(Categories.Exanite)]
         [Benchmark]
-        public void ExaniteEcs()
+        public void Exanite()
         {
-            ExaniteEcsQueryQuery();
+            UpdateExaniteQuery();
         }
 
         [Query]
-        private void ExaniteEcsQuery(ref Component1 component1)
+        private void UpdateExanite(ref Component1 component1)
         {
             component1.Value++;
         }

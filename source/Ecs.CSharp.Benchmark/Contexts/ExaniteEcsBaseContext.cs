@@ -4,7 +4,7 @@ using Exanite.Myriad.Ecs.CommandBuffers;
 
 namespace Ecs.CSharp.Benchmark.Contexts
 {
-    namespace ExaniteEcs_Components
+    namespace Exanite_Components
     {
         internal struct Component1 : IComponent
         {
@@ -27,12 +27,12 @@ namespace Ecs.CSharp.Benchmark.Contexts
         internal struct Padding4 : IComponent;
     }
 
-    internal class ExaniteEcsBaseContext : IDisposable
+    internal class ExaniteBaseContext : IDisposable
     {
         public EcsWorld World { get; }
         public EcsCommandBuffer CommandBuffer { get; }
 
-        public ExaniteEcsBaseContext()
+        public ExaniteBaseContext()
         {
             World = new EcsWorld();
             CommandBuffer = World.AcquireCommandBuffer();

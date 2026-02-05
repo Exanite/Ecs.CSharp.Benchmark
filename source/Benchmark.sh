@@ -10,4 +10,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-dotnet run --project Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj -c Release --no-build --anyCategories DefaultEcs
+dotnet run --project Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj -c Release --no-build --anyCategories Exanite --filter SystemWithOneComponent

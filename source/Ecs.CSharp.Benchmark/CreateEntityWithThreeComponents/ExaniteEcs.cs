@@ -1,27 +1,27 @@
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
-using Ecs.CSharp.Benchmark.Contexts.ExaniteEcs_Components;
+using Ecs.CSharp.Benchmark.Contexts.Exanite_Components;
 
 namespace Ecs.CSharp.Benchmark
 {
     public partial class CreateEntityWithThreeComponents
     {
         [Context]
-        private readonly ExaniteEcsBaseContext _exaniteEcs;
+        private readonly ExaniteBaseContext _exanite;
 
-        [BenchmarkCategory(Categories.ExaniteEcs)]
+        [BenchmarkCategory(Categories.Exanite)]
         [Benchmark]
-        public void ExaniteEcs()
+        public void Exanite()
         {
             for (int i = 0; i < EntityCount; ++i)
             {
-                _exaniteEcs.CommandBuffer.Create()
+                _exanite.CommandBuffer.Create()
                     .Set(new Component1())
                     .Set(new Component2())
                     .Set(new Component3());
             }
 
-            _exaniteEcs.CommandBuffer.Execute();
+            _exanite.CommandBuffer.Execute();
         }
     }
 }

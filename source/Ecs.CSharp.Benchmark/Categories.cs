@@ -17,7 +17,7 @@
         public const string FlecsNet = "FlecsNet";
         public const string Fennecs = "Fennecs";
         public const string TinyEcs = "TinyEcs";
-        public const string ExaniteEcs = "Exanite.Ecs";
+        public const string Exanite = "Exanite";
 
         public const string CreateEntity = "CreateEntity";
         public const string System = "System";
