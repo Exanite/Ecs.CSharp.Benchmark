@@ -36,7 +36,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.MultiThreaded)]
         public void TinyEcs_EachJob()
         {
             _tinyEcs.Query.EachJob((ref Component1 c1) => c1.Value++);
