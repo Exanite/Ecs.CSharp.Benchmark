@@ -37,22 +37,22 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryInline()
         {
             _frent.Query.Inline<Sum, Component1, Component2, Component3>(default);
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryDelegate()
         {
             _frent.Query.Delegate((ref Component1 c1, ref Component2 c2, ref Component1 c3) => c1.Value += c2.Value + c3.Value);
         }
 
-        [BenchmarkCategory(Categories.Frent)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_Simd()
         {
             foreach ((var s1, var s2, var s3) in _frent.Query.EnumerateChunks<Component1, Component2, Component3>())

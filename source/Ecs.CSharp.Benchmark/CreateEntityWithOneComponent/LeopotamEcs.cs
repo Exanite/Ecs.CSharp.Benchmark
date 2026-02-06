@@ -9,8 +9,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly LeopotamEcsBaseContext _leopotamEcs;
 
-        [BenchmarkCategory(Categories.LeopotamEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.LeopotamEcs, Categories.SingleThreaded)]
         public void LeopotamEcs()
         {
             for (int i = 0; i < EntityCount; ++i)

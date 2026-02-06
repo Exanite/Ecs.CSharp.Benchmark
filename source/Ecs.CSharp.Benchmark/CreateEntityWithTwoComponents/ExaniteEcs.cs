@@ -1,4 +1,4 @@
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Ecs.CSharp.Benchmark.Contexts.Exanite_Components;
 
@@ -9,8 +9,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly ExaniteBaseContext _exanite;
 
-        [BenchmarkCategory(Categories.Exanite)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded)]
         public void Exanite()
         {
             for (int i = 0; i < EntityCount; ++i)

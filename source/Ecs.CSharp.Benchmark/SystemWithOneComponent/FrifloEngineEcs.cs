@@ -27,8 +27,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly FrifloEngineEcsContext _frifloEngineEcs;
 
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
         public void FrifloEngineEcs_MonoThread()
         {
             foreach ((Chunk<Component1> component1, ChunkEntities _) in _frifloEngineEcs.queryOne.Chunks)
@@ -40,15 +40,15 @@ namespace Ecs.CSharp.Benchmark
             }
         }
         
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.MultiThreaded)]
         public void FrifloEngineEcs_MultiThread()
         {
             _frifloEngineEcs.jobOne.RunParallel();
         }
         
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
         public void FrifloEngineEcs_SIMD_MonoThread()
         {
             Vector256<int> add = Vector256.Create<int>(1);              // create int[8] vector - all values = 1

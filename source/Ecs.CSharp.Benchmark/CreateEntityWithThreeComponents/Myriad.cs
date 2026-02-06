@@ -12,8 +12,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MyriadBaseContext _myriad;
 
-        [BenchmarkCategory(Categories.Myriad)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad()
         {
             World world = _myriad.World;

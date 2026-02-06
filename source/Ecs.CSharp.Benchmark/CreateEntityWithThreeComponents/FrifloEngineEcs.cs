@@ -6,8 +6,8 @@ namespace Ecs.CSharp.Benchmark
 {
     public partial class CreateEntityWithThreeComponents
     {
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
         public void FrifloEngineEcs()
         {
             EntityStore store = new EntityStore(PidType.UsePidAsId);

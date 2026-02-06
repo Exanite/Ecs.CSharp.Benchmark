@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Exanite.Myriad.Ecs;
 using Exanite.Myriad.Ecs.CommandBuffers;
 

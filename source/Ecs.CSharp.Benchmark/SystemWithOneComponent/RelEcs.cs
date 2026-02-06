@@ -40,8 +40,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly RelEcsContext _relEcs;
 
-        [BenchmarkCategory(Categories.RelEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.RelEcs, Categories.SingleThreaded)]
         public void RelEcs() => _relEcs.MonoThreadSystem.Run(_relEcs.World);
     }
 }

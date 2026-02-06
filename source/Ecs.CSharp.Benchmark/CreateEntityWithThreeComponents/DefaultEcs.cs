@@ -9,8 +9,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly DefaultEcsBaseContext _defaultEcs;
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.SingleThreaded)]
         public void DefaultEcs()
         {
             for (int i = 0; i < EntityCount; ++i)

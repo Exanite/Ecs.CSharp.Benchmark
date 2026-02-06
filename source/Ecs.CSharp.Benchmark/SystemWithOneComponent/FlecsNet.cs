@@ -30,8 +30,8 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.FlecsNet)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded)]
         public void FlecsNet_Each()
         {
             _flecs.query.Each((ref Component1 c1) =>
@@ -40,8 +40,8 @@ namespace Ecs.CSharp.Benchmark
             });
         }
 
-        [BenchmarkCategory(Categories.FlecsNet)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded)]
         public void FlecsNet_Iter()
         {
             _flecs.query.Iter((Iter it, Column<Component1> c1) =>

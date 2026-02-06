@@ -10,8 +10,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly FennecsBaseContext _fennecs;
 
-        [BenchmarkCategory(Categories.Fennecs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Fennecs, Categories.SingleThreaded)]
         public void Fennecs()
         {
             World world = _fennecs.World;

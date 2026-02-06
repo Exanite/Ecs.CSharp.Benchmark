@@ -80,20 +80,20 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly DefaultEcsContext _defaultEcs;
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.SingleThreaded)]
         public void DefaultEcs_ComponentSystem_MonoThread() => _defaultEcs.MonoThreadComponentSystem.Update(0);
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.MultiThreaded)]
         public void DefaultEcs_ComponentSystem_MultiThread() => _defaultEcs.MultiThreadComponentSystem.Update(0);
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.SingleThreaded)]
         public void DefaultEcs_EntitySetSystem_MonoThread() => _defaultEcs.MonoThreadEntitySetSystem.Update(0);
 
-        [BenchmarkCategory(Categories.DefaultEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.DefaultEcs, Categories.MultiThreaded)]
         public void DefaultEcs_EntitySetSystem_MultiThread() => _defaultEcs.MultiThreadEntitySetSystem.Update(0);
     }
 }
