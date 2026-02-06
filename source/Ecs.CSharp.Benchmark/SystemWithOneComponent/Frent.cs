@@ -56,7 +56,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded, Categories.Simd)]
         public void Frent_Simd()
         {
             Vector256<int> sum = Vector256.Create(1);

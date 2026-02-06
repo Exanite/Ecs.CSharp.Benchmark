@@ -57,7 +57,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded, Categories.Simd)]
         public void FrifloEngineEcs_SIMD_MonoThread()
         {
             foreach ((Chunk<Component1> component1, Chunk<Component2> component2, ChunkEntities _)
