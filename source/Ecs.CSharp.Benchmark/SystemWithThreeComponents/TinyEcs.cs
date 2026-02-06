@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Ecs.CSharp.Benchmark.Contexts.TinyEcs_Components;
 using TinyEcs;
@@ -46,15 +46,15 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
         public void TinyEcs_Each()
         {
             _tinyEcs.Query.Each((ref Component1 c1, ref Component2 c2, ref Component3 c3) => c1.Value += c2.Value + c3.Value);
         }
 
-        [BenchmarkCategory(Categories.TinyEcs, Categories.MultiThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.MultiThreaded)]
         public void TinyEcs_EachJob()
         {
             _tinyEcs.Query.EachJob((ref Component1 c1, ref Component2 c2, ref Component3 c3) => c1.Value += c2.Value + c3.Value);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Numerics;
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
@@ -78,40 +78,40 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MyriadContext _myriad;
 
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad_SingleThread()
         {
             World world = _myriad.World;
             world.Execute<MyriadForEach2, Component1, Component2>(new MyriadForEach2());
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         public void Myriad_MultiThread()
         {
             World world = _myriad.World;
             world.ExecuteParallel<MyriadForEach2, Component1, Component2>(new MyriadForEach2());
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad_SingleThreadChunk()
         {
             World world = _myriad.World;
             world.ExecuteChunk<MyriadForEach2, Component1, Component2>(new MyriadForEach2());
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.MultiThreaded)]
         public void Myriad_MultiThreadChunk()
         {
             World world = _myriad.World;
             world.ExecuteChunkParallel<MyriadForEach2, Component1, Component2>(new MyriadForEach2());
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad_Enumerable()
         {
             World world = _myriad.World;
@@ -122,8 +122,8 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad_Delegate()
         {
             World world = _myriad.World;
@@ -134,8 +134,8 @@ namespace Ecs.CSharp.Benchmark
             });
         }
 
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
         public void Myriad_SingleThreadChunk_SIMD()
         {
             World world = _myriad.World;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Scellecs.Morpeh;
@@ -111,12 +111,12 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MorpehContext _context;
 
-        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         public void Morpeh_Direct() => _context.MonoThreadDirectSystem.OnUpdate(0f);
 
-        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Morpeh, Categories.SingleThreaded)]
         public void Morpeh_Stash() => _context.MonoThreadStashSystem.OnUpdate(0f);
     }
 }

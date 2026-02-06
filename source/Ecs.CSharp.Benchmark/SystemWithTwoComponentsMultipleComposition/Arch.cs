@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Arch.Core;
@@ -77,23 +77,23 @@ namespace Ecs.CSharp.Benchmark
         private readonly ArchContext _arch;
         private ForEach2 _forEach2;
 
-        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         public void Arch()
         {
             World world = _arch.World;
             world.InlineQuery<ForEach2, Component1, Component2>(in _queryDescription, ref _forEach2);
         }
         
-        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         public void Arch_MonoThread_SourceGenerated()
         {
             ForEachQuery(_arch.World);
         }
         
-        [BenchmarkCategory(Categories.Arch, Categories.MultiThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.MultiThreaded)]
         public void Arch_MultiThread()
         {
             World world = _arch.World;

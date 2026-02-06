@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Svelto.DataStructures;
@@ -80,8 +80,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly SveltoECSContext _sveltoECS;
 
-        [BenchmarkCategory(Categories.SveltoECS, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.SveltoECS, Categories.SingleThreaded)]
         public void SveltoECS() => _sveltoECS.Engine.Update();
     }
 }

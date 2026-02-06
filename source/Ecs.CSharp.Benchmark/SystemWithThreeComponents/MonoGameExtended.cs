@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended.Entities;
@@ -88,8 +88,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MonoGameExtendedContext _monoGameExtended;
 
-        [BenchmarkCategory(Categories.MonoGameExtended, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.MonoGameExtended, Categories.SingleThreaded)]
         public void MonoGameExtended() => _monoGameExtended.World.Update(_monoGameExtended.Time);
     }
 }

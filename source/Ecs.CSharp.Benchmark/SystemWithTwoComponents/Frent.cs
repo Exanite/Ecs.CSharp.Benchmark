@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using BenchmarkDotNet.Attributes;
@@ -41,22 +41,22 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryInline()
         {
             _frent.Query.Inline<Sum, Component1, Component2>(default);
         }
 
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_QueryDelegate()
         {
             _frent.Query.Delegate((ref Component1 c1, ref Component2 c2) => c1.Value += c2.Value);
         }
 
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
         public void Frent_Simd()
         {
             foreach ((var s1, var s2) in _frent.Query.EnumerateChunks<Component1, Component2>())

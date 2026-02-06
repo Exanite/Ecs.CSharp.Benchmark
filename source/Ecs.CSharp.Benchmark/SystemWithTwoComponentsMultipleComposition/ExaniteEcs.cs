@@ -42,8 +42,8 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded)]
         public void Exanite()
         {
             UpdateExaniteQuery([_exanite.World]);

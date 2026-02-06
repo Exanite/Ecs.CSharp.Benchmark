@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using RelEcs;
 
@@ -56,8 +56,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly RelEcsContext _relEcs;
 
-        [BenchmarkCategory(Categories.RelEcs, Categories.SingleThreaded)]
         [Benchmark]
+        [BenchmarkCategory(Categories.RelEcs, Categories.SingleThreaded)]
         public void RelEcs() => _relEcs.MonoThreadSystem.Run(_relEcs.World);
     }
 }
