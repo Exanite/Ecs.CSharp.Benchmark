@@ -3,6 +3,7 @@
 using System.Globalization;
 using System.Linq;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Filters;
 using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Running;
@@ -31,6 +32,7 @@ BenchmarkSwitcher benchmark = BenchmarkSwitcher.FromTypes(new[]
 IConfig configuration = DefaultConfig.Instance
     .WithOptions(ConfigOptions.DisableOptimizationsValidator)
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
+    .AddHardwareCounters(HardwareCounter.CacheMisses, HardwareCounter.LlcMisses, HardwareCounter.LlcReference)
     .AddFilter(new SimpleFilter(benchmarkCase =>
     {
         // Skip non-zero entity padding

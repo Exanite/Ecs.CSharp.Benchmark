@@ -4,9 +4,6 @@ namespace Ecs.CSharp.Benchmark
 {
     [BenchmarkCategory(Categories.System)]
     [MemoryDiagnoser]
-#if CHECK_CACHE_MISSES
-    [HardwareCounters(BenchmarkDotNet.Diagnosers.HardwareCounter.CacheMisses)]
-#endif
     public partial class SystemWithTwoComponentsMultipleComposition
     {
         [Params(100000)]

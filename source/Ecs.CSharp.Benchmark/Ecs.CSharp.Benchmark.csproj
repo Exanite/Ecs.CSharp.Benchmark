@@ -13,8 +13,6 @@
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     <NoWarn>$(NoWarn);NETSDK1206</NoWarn>
       
-    <DefineConstants Condition="'$(CheckCacheMisses)' == 'true'">CHECK_CACHE_MISSES</DefineConstants>
-
     <NoWarn>$(NoWarn);CA1515;</NoWarn>
     <NoWarn>$(NoWarn);CA1822;</NoWarn>
     <NoWarn>$(NoWarn);CA1823;</NoWarn>
