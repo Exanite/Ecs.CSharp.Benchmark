@@ -16,7 +16,9 @@ namespace Ecs.CSharp.Benchmark
             {
                 for (int i = 0; i < entityCount; i++)
                 {
-                    var entity = CommandBuffer.Create().Set(new Component1());
+                    var entity = CommandBuffer.Create()
+                        .Set(new Component1())
+                        .Set(new Component2() { Value = 2 });
 
                     switch (i % 4)
                     {
