@@ -45,6 +45,12 @@ IConfig configuration = DefaultConfig.Instance
             return false;
         }
 
+        // Skip SIMD
+        if (benchmarkCase.Descriptor.HasCategory(Categories.Simd))
+        {
+            return false;
+        }
+
         // Exanite only
         if (!benchmarkCase.Descriptor.HasCategory(Categories.Exanite))
         {
