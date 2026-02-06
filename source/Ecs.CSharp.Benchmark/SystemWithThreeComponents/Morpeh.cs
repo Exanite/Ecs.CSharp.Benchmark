@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using Scellecs.Morpeh;

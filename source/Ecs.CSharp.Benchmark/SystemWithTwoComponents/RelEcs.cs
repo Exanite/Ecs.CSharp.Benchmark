@@ -1,4 +1,4 @@
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using Ecs.CSharp.Benchmark.Contexts;
 using RelEcs;
 
