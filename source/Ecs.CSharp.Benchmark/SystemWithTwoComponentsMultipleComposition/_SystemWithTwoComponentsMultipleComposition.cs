@@ -13,7 +13,13 @@ namespace Ecs.CSharp.Benchmark
         public int EntityCount { get; set; }
 
         [GlobalSetup]
-        public void Setup() => BenchmarkOperations.SetupContexts(this, EntityCount);
+        public void Setup()
+        {
+            BenchmarkOperations.SetupContexts(this, EntityCount);
+
+            // Initialize query for Exanite
+            InitializeQueries([_exanite.World]);
+        }
 
         [GlobalCleanup]
         public void Cleanup() => BenchmarkOperations.CleanupContexts(this);

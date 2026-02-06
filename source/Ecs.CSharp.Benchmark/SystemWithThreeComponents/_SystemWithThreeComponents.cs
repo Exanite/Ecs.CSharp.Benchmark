@@ -16,7 +16,13 @@ namespace Ecs.CSharp.Benchmark
         public int EntityPadding { get; set; }
 
         [GlobalSetup]
-        public void Setup() => BenchmarkOperations.SetupContexts(this, EntityCount, EntityPadding);
+        public void Setup()
+        {
+            BenchmarkOperations.SetupContexts(this, EntityCount, EntityPadding);
+
+            // Initialize query for Exanite
+            InitializeQueries([_exanite.World]);
+        }
 
         [GlobalCleanup]
         public void Cleanup() => BenchmarkOperations.CleanupContexts(this);
