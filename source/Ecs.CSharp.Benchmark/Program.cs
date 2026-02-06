@@ -32,7 +32,12 @@ BenchmarkSwitcher benchmark = BenchmarkSwitcher.FromTypes(new[]
 IConfig configuration = DefaultConfig.Instance
     .WithOptions(ConfigOptions.DisableOptimizationsValidator)
     .WithOrderer(new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest))
-    .AddHardwareCounters(HardwareCounter.CacheMisses, HardwareCounter.LlcMisses, HardwareCounter.LlcReference)
+    .AddHardwareCounters(
+        HardwareCounter.CacheMisses,
+        HardwareCounter.LlcMisses,
+        HardwareCounter.LlcReference,
+        HardwareCounter.BranchMispredictions,
+        HardwareCounter.InstructionRetired)
     .AddFilter(new SimpleFilter(benchmarkCase =>
     {
         // Skip non-zero entity padding
