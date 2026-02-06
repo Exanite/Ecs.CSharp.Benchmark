@@ -81,6 +81,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly SveltoECSContext _sveltoECS;
 
         [Benchmark]
+        [BenchmarkCategory(Categories.SveltoECS, Categories.SingleThreaded)]
         public void SveltoECS() => _sveltoECS.Engine.Update();
     }
 }

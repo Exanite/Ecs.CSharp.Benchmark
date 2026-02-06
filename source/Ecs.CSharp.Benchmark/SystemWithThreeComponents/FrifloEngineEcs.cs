@@ -30,8 +30,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly FrifloEngineEcsContext _frifloEngineEcs;
 
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
         public void FrifloEngineEcs_MonoThread()
         {
             foreach ((Chunk<Component1> component1, Chunk<Component2> component2, Chunk<Component3> component3, ChunkEntities _)
@@ -47,8 +47,8 @@ namespace Ecs.CSharp.Benchmark
             }
         }
         
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.MultiThreaded)]
         public void FrifloEngineEcs_MultiThread()
         {
             _frifloEngineEcs.jobThree.RunParallel();
@@ -59,8 +59,8 @@ namespace Ecs.CSharp.Benchmark
             c1.Value += c2.Value + c3.Value;
         }
 
-        [BenchmarkCategory(Categories.FrifloEngineEcs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
         public void FrifloEngineEcs_SIMD_MonoThread()
         {
             foreach ((Chunk<Component1> component1, Chunk<Component2> component2, Chunk<Component3> component3, ChunkEntities _)

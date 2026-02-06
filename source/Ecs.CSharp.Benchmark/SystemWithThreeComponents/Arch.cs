@@ -40,23 +40,23 @@ namespace Ecs.CSharp.Benchmark
         private readonly ArchContext _arch;
         private ForEach3 _forEach3;
 
-        [BenchmarkCategory(Categories.Arch)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         public void Arch_MonoThread()
         {
             World world = _arch.World;
             world.InlineQuery<ForEach3, Component1, Component2, Component3>(_queryDescription, ref _forEach3);
         }
         
-        [BenchmarkCategory(Categories.Arch)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.SingleThreaded)]
         public void Arch_MonoThread_SourceGenerated()
         {
             ForEachQuery(_arch.World);
         }
         
-        [BenchmarkCategory(Categories.Arch)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Arch, Categories.MultiThreaded)]
         public void Arch_MultiThread()
         {
             World world = _arch.World;

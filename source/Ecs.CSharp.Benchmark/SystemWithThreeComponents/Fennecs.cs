@@ -44,22 +44,22 @@ namespace Ecs.CSharp.Benchmark
             }
         }
 
-        [BenchmarkCategory(Categories.Fennecs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Fennecs, Categories.SingleThreaded)]
         public void Fennecs_ForEach()
         {
             _fennecs.query.For((ref Component1 c1, ref Component2 c2, ref Component3 c3) => c1.Value += c2.Value + c3.Value);
         }
 
-        [BenchmarkCategory(Categories.Fennecs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Fennecs, Categories.MultiThreaded)]
         public void Fennecs_Job()
         {
             _fennecs.query.Job(delegate(ref Component1 c1, ref Component2 c2, ref Component3 c3) { c1.Value += c2.Value + c3.Value; }, 1024);
         }
 
-        [BenchmarkCategory(Categories.Fennecs)]
         [Benchmark]
+        [BenchmarkCategory(Categories.Fennecs, Categories.SingleThreaded)]
         public void Fennecs_Raw()
         {
             _fennecs.query.Raw(delegate(Memory<Component1> c1v, Memory<Component2> c2v, Memory<Component3> c3v)

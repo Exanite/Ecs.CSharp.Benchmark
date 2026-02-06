@@ -93,8 +93,8 @@ namespace Ecs.CSharp.Benchmark
         [Context]
         private readonly MonoGameExtendedContext _monoGameExtended;
 
-        [BenchmarkCategory(Categories.MonoGameExtended)]
         [Benchmark]
+        [BenchmarkCategory(Categories.MonoGameExtended, Categories.SingleThreaded)]
         public void MonoGameExtended() => _monoGameExtended.World.Update(_monoGameExtended.Time);
     }
 }
