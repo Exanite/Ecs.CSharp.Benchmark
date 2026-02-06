@@ -54,8 +54,7 @@ namespace Ecs.CSharp.Benchmark
         [Query]
         private void UpdateExanite(ref Component1 component1, ref Component2 component2)
         {
-            component1.Value++;
-            component2.Value++;
+            component1.Value += component2.Value;
         }
     }
 }
