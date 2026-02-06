@@ -5,7 +5,7 @@ cd "$(dirname "$0")" || exit 1
 rm -rf BenchmarkDotNet.Artifacts
 dotnet clean Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj -c Release
 
-dotnet build Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj -c Release /p:CheckCacheMisses=true
+dotnet build Ecs.CSharp.Benchmark/Ecs.CSharp.Benchmark.csproj -c Release
 if [ $? -ne 0 ]; then
     exit 1
 fi
