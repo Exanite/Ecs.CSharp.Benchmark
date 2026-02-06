@@ -48,7 +48,7 @@ namespace Ecs.CSharp.Benchmark
         }
         
         [Benchmark]
-        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded, Categories.Simd)]
         public void FrifloEngineEcs_SIMD_MonoThread()
         {
             Vector256<int> add = Vector256.Create<int>(1);              // create int[8] vector - all values = 1

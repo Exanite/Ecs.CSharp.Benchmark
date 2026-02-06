@@ -52,7 +52,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded, Categories.Simd)]
         public void Frent_Simd()
         {
             foreach ((var s1, var s2, var s3) in _frent.Query.EnumerateChunks<Component1, Component2, Component3>())

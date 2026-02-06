@@ -120,7 +120,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Myriad, Categories.SingleThreaded, Categories.Simd)]
         public void Myriad_SingleThreadChunk_SIMD()
         {
             World world = _myriad.World;

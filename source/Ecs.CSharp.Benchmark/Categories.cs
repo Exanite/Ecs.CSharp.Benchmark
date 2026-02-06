@@ -24,5 +24,7 @@
 
         public const string SingleThreaded = "SingleThreaded";
         public const string MultiThreaded = "MultiThreaded";
+
+        public const string Simd = "Simd";
     }
 }
