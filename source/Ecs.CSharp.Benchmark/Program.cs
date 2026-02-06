@@ -38,6 +38,7 @@ IConfig configuration = DefaultConfig.Instance
         HardwareCounter.LlcReference,
         HardwareCounter.BranchMispredictions,
         HardwareCounter.InstructionRetired)
+    .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig()))
     .AddFilter(new SimpleFilter(benchmarkCase =>
     {
         // Skip non-zero entity padding
