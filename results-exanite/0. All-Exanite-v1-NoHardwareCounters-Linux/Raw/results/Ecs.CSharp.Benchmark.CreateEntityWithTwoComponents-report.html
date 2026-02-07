@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Ecs.CSharp.Benchmark.CreateEntityWithTwoComponents-20260205-061839</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Arch Linux
+AMD Ryzen 9 5900X, 1 CPU, 24 logical and 12 physical cores
+.NET SDK 10.0.101
+  [Host]     : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+  Job-YMNESL : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method    </th><th>EntityCount</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Frent_Bulk</td><td>100000</td><td>1.320 ms</td><td>0.0264 ms</td><td>0.0562 ms</td><td>1.316 ms</td><td>-</td><td>-</td><td>-</td><td>3713.95 KB</td>
+</tr><tr><td>Frent</td><td>100000</td><td>1.809 ms</td><td>0.0356 ms</td><td>0.0678 ms</td><td>1.794 ms</td><td>-</td><td>-</td><td>-</td><td>3713.95 KB</td>
+</tr><tr><td>Arch</td><td>100000</td><td>3.850 ms</td><td>0.0729 ms</td><td>0.1982 ms</td><td>3.801 ms</td><td>-</td><td>-</td><td>-</td><td>3558.77 KB</td>
+</tr><tr><td>FrifloEngineEcs</td><td>100000</td><td>4.299 ms</td><td>0.0786 ms</td><td>0.0736 ms</td><td>4.306 ms</td><td>1000.0000</td><td>1000.0000</td><td>1000.0000</td><td>3898.51 KB</td>
+</tr><tr><td>LeopotamEcsLite</td><td>100000</td><td>4.847 ms</td><td>0.0968 ms</td><td>0.2204 ms</td><td>4.847 ms</td><td>-</td><td>-</td><td>-</td><td>9199.66 KB</td>
+</tr><tr><td>LeopotamEcs</td><td>100000</td><td>7.490 ms</td><td>0.2696 ms</td><td>0.6960 ms</td><td>7.392 ms</td><td>-</td><td>-</td><td>-</td><td>14711.35 KB</td>
+</tr><tr><td>DefaultEcs</td><td>100000</td><td>10.269 ms</td><td>0.2053 ms</td><td>0.4330 ms</td><td>10.261 ms</td><td>-</td><td>-</td><td>-</td><td>15419.23 KB</td>
+</tr><tr><td>FlecsNet</td><td>100000</td><td>11.818 ms</td><td>0.1713 ms</td><td>0.1430 ms</td><td>11.761 ms</td><td>-</td><td>-</td><td>-</td><td>3.45 KB</td>
+</tr><tr><td>MonoGameExtended</td><td>100000</td><td>14.745 ms</td><td>0.4610 ms</td><td>1.3154 ms</td><td>14.546 ms</td><td>-</td><td>-</td><td>-</td><td>23374.16 KB</td>
+</tr><tr><td>TinyEcs</td><td>100000</td><td>15.455 ms</td><td>0.3018 ms</td><td>0.3706 ms</td><td>15.419 ms</td><td>-</td><td>-</td><td>-</td><td>13785.41 KB</td>
+</tr><tr><td>Myriad</td><td>100000</td><td>16.546 ms</td><td>0.3675 ms</td><td>1.0485 ms</td><td>16.231 ms</td><td>-</td><td>-</td><td>-</td><td>8028.89 KB</td>
+</tr><tr><td>Fennecs</td><td>100000</td><td>17.670 ms</td><td>0.3398 ms</td><td>0.4536 ms</td><td>17.640 ms</td><td>-</td><td>-</td><td>-</td><td>15174.78 KB</td>
+</tr><tr><td>HypEcs</td><td>100000</td><td>23.168 ms</td><td>0.5279 ms</td><td>1.5482 ms</td><td>23.282 ms</td><td>1000.0000</td><td>1000.0000</td><td>-</td><td>45334.31 KB</td>
+</tr><tr><td>SveltoECS</td><td>100000</td><td>25.244 ms</td><td>0.4799 ms</td><td>1.0535 ms</td><td>25.203 ms</td><td>-</td><td>-</td><td>-</td><td>4.47 KB</td>
+</tr><tr><td>Exanite</td><td>100000</td><td>29.219 ms</td><td>0.5040 ms</td><td>0.3935 ms</td><td>29.216 ms</td><td>-</td><td>-</td><td>-</td><td>16941.41 KB</td>
+</tr><tr><td>RelEcs</td><td>100000</td><td>44.739 ms</td><td>0.7960 ms</td><td>0.8517 ms</td><td>44.591 ms</td><td>2000.0000</td><td>1000.0000</td><td>-</td><td>50672.02 KB</td>
+</tr><tr><td>Morpeh_Stash</td><td>100000</td><td>47.612 ms</td><td>1.1847 ms</td><td>3.4558 ms</td><td>48.045 ms</td><td>2000.0000</td><td>1000.0000</td><td>1000.0000</td><td>48134.35 KB</td>
+</tr><tr><td>Morpeh_Direct</td><td>100000</td><td>214.062 ms</td><td>2.4074 ms</td><td>2.2518 ms</td><td>213.576 ms</td><td>7000.0000</td><td>7000.0000</td><td>1000.0000</td><td>128859.44 KB</td>
+</tr></tbody></table>
+</body>
+</html>

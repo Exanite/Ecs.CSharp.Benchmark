@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Ecs.CSharp.Benchmark.CreateEntityWithOneComponent-20260205-061746</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Arch Linux
+AMD Ryzen 9 5900X, 1 CPU, 24 logical and 12 physical cores
+.NET SDK 10.0.101
+  [Host]     : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+  Job-YMNESL : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method    </th><th>EntityCount</th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Frent_Bulk</td><td>100000</td><td>729.0 &mu;s</td><td>15.36 &mu;s</td><td>41.78 &mu;s</td><td>724.7 &mu;s</td><td>-</td><td>-</td><td>3323.24 KB</td>
+</tr><tr><td>Frent</td><td>100000</td><td>1,624.7 &mu;s</td><td>32.22 &mu;s</td><td>58.92 &mu;s</td><td>1,613.0 &mu;s</td><td>-</td><td>-</td><td>3323.24 KB</td>
+</tr><tr><td>LeopotamEcsLite</td><td>100000</td><td>3,024.7 &mu;s</td><td>246.78 &mu;s</td><td>719.88 &mu;s</td><td>3,114.5 &mu;s</td><td>-</td><td>-</td><td>7151.41 KB</td>
+</tr><tr><td>FrifloEngineEcs</td><td>100000</td><td>3,126.5 &mu;s</td><td>60.93 &mu;s</td><td>62.57 &mu;s</td><td>3,141.5 &mu;s</td><td>-</td><td>-</td><td>3382.07 KB</td>
+</tr><tr><td>Arch</td><td>100000</td><td>4,158.8 &mu;s</td><td>132.32 &mu;s</td><td>371.04 &mu;s</td><td>4,064.8 &mu;s</td><td>-</td><td>-</td><td>3178.77 KB</td>
+</tr><tr><td>FlecsNet</td><td>100000</td><td>5,666.3 &mu;s</td><td>141.78 &mu;s</td><td>411.34 &mu;s</td><td>5,594.5 &mu;s</td><td>-</td><td>-</td><td>3.07 KB</td>
+</tr><tr><td>LeopotamEcs</td><td>100000</td><td>5,737.6 &mu;s</td><td>239.18 &mu;s</td><td>625.89 &mu;s</td><td>5,554.8 &mu;s</td><td>-</td><td>-</td><td>13685.98 KB</td>
+</tr><tr><td>DefaultEcs</td><td>100000</td><td>6,854.8 &mu;s</td><td>235.97 &mu;s</td><td>633.92 &mu;s</td><td>6,622.9 &mu;s</td><td>-</td><td>-</td><td>11321.44 KB</td>
+</tr><tr><td>TinyEcs</td><td>100000</td><td>7,532.3 &mu;s</td><td>143.83 &mu;s</td><td>153.90 &mu;s</td><td>7,507.5 &mu;s</td><td>-</td><td>-</td><td>7834.48 KB</td>
+</tr><tr><td>MonoGameExtended</td><td>100000</td><td>8,705.9 &mu;s</td><td>359.81 &mu;s</td><td>1,008.95 &mu;s</td><td>8,401.0 &mu;s</td><td>-</td><td>-</td><td>16409.22 KB</td>
+</tr><tr><td>Fennecs</td><td>100000</td><td>11,040.0 &mu;s</td><td>248.62 &mu;s</td><td>729.15 &mu;s</td><td>10,863.2 &mu;s</td><td>-</td><td>-</td><td>13636.77 KB</td>
+</tr><tr><td>Myriad</td><td>100000</td><td>11,803.1 &mu;s</td><td>234.65 &mu;s</td><td>601.50 &mu;s</td><td>11,754.2 &mu;s</td><td>-</td><td>-</td><td>7633.51 KB</td>
+</tr><tr><td>HypEcs</td><td>100000</td><td>12,555.0 &mu;s</td><td>243.90 &mu;s</td><td>299.53 &mu;s</td><td>12,576.5 &mu;s</td><td>-</td><td>-</td><td>25827.38 KB</td>
+</tr><tr><td>SveltoECS</td><td>100000</td><td>15,252.4 &mu;s</td><td>303.50 &mu;s</td><td>815.32 &mu;s</td><td>15,127.4 &mu;s</td><td>-</td><td>-</td><td>3.55 KB</td>
+</tr><tr><td>RelEcs</td><td>100000</td><td>17,721.0 &mu;s</td><td>383.17 &mu;s</td><td>1,099.39 &mu;s</td><td>17,766.7 &mu;s</td><td>1000.0000</td><td>-</td><td>29667.9 KB</td>
+</tr><tr><td>Exanite</td><td>100000</td><td>21,960.8 &mu;s</td><td>689.12 &mu;s</td><td>1,988.28 &mu;s</td><td>21,790.6 &mu;s</td><td>-</td><td>-</td><td>16545.02 KB</td>
+</tr><tr><td>Morpeh_Stash</td><td>100000</td><td>55,104.7 &mu;s</td><td>1,084.18 &mu;s</td><td>1,519.87 &mu;s</td><td>55,192.0 &mu;s</td><td>2000.0000</td><td>2000.0000</td><td>41303.79 KB</td>
+</tr><tr><td>Morpeh_Direct</td><td>100000</td><td>55,687.6 &mu;s</td><td>1,101.31 &mu;s</td><td>2,224.70 &mu;s</td><td>55,720.0 &mu;s</td><td>2000.0000</td><td>2000.0000</td><td>41301.16 KB</td>
+</tr></tbody></table>
+</body>
+</html>

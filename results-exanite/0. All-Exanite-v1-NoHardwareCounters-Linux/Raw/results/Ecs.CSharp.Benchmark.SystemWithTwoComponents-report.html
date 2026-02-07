@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Ecs.CSharp.Benchmark.SystemWithTwoComponents-20260205-083735</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Arch Linux
+AMD Ryzen 9 5900X, 1 CPU, 24 logical and 12 physical cores
+.NET SDK 10.0.101
+  [Host]     : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+  DefaultJob : .NET 10.0.1 (10.0.125.57005), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                   </th><th>EntityCount</th><th>EntityPadding</th><th>Mean  </th><th>Error</th><th>StdDev </th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Frent_Simd</td><td>100000</td><td>10</td><td>8.654 &mu;s</td><td>0.1173 &mu;s</td><td>0.1992 &mu;s</td><td>8.637 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Frent_Simd</td><td>100000</td><td>0</td><td>9.388 &mu;s</td><td>0.1152 &mu;s</td><td>0.1022 &mu;s</td><td>9.355 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FrifloEngineEcs_SIMD_MonoThread</td><td>100000</td><td>10</td><td>9.648 &mu;s</td><td>0.1628 &mu;s</td><td>0.1523 &mu;s</td><td>9.628 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_SingleThreadChunk_SIMD</td><td>100000</td><td>10</td><td>11.685 &mu;s</td><td>0.0824 &mu;s</td><td>0.0643 &mu;s</td><td>11.681 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FrifloEngineEcs_SIMD_MonoThread</td><td>100000</td><td>0</td><td>12.245 &mu;s</td><td>0.1100 &mu;s</td><td>0.1029 &mu;s</td><td>12.226 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_SingleThreadChunk_SIMD</td><td>100000</td><td>0</td><td>16.549 &mu;s</td><td>0.1172 &mu;s</td><td>0.1039 &mu;s</td><td>16.529 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>TinyEcs_EachJob</td><td>100000</td><td>10</td><td>17.004 &mu;s</td><td>0.1790 &mu;s</td><td>0.3575 &mu;s</td><td>17.016 &mu;s</td><td>0.0916</td><td>-</td><td>1552 B</td>
+</tr><tr><td>TinyEcs_EachJob</td><td>100000</td><td>0</td><td>19.928 &mu;s</td><td>0.2568 &mu;s</td><td>0.2276 &mu;s</td><td>19.908 &mu;s</td><td>0.0916</td><td>-</td><td>1552 B</td>
+</tr><tr><td>Frent_QueryInline</td><td>100000</td><td>10</td><td>27.197 &mu;s</td><td>0.3221 &mu;s</td><td>0.3013 &mu;s</td><td>27.178 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Frent_QueryDelegate</td><td>100000</td><td>10</td><td>27.390 &mu;s</td><td>0.4943 &mu;s</td><td>0.7089 &mu;s</td><td>27.216 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>HypEcs_MonoThread</td><td>100000</td><td>10</td><td>27.913 &mu;s</td><td>0.4211 &mu;s</td><td>0.3939 &mu;s</td><td>27.848 &mu;s</td><td>-</td><td>-</td><td>112 B</td>
+</tr><tr><td>HypEcs_MultiThread</td><td>100000</td><td>10</td><td>28.507 &mu;s</td><td>0.5267 &mu;s</td><td>0.8044 &mu;s</td><td>28.468 &mu;s</td><td>0.0610</td><td>-</td><td>1872 B</td>
+</tr><tr><td>Myriad_MultiThreadChunk</td><td>100000</td><td>10</td><td>28.653 &mu;s</td><td>0.4393 &mu;s</td><td>0.3668 &mu;s</td><td>28.765 &mu;s</td><td>1.2817</td><td>0.0610</td><td>21504 B</td>
+</tr><tr><td>TinyEcs_Each</td><td>100000</td><td>10</td><td>29.195 &mu;s</td><td>0.3227 &mu;s</td><td>0.3018 &mu;s</td><td>29.319 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_SingleThreadChunk</td><td>100000</td><td>10</td><td>29.828 &mu;s</td><td>0.3366 &mu;s</td><td>0.2811 &mu;s</td><td>29.930 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>TinyEcs_Each</td><td>100000</td><td>0</td><td>34.039 &mu;s</td><td>0.2411 &mu;s</td><td>0.2255 &mu;s</td><td>34.106 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>HypEcs_MonoThread</td><td>100000</td><td>0</td><td>35.221 &mu;s</td><td>0.6249 &mu;s</td><td>0.5846 &mu;s</td><td>35.069 &mu;s</td><td>-</td><td>-</td><td>112 B</td>
+</tr><tr><td>Frent_QueryInline</td><td>100000</td><td>0</td><td>35.404 &mu;s</td><td>0.4161 &mu;s</td><td>0.3892 &mu;s</td><td>35.566 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Frent_QueryDelegate</td><td>100000</td><td>0</td><td>35.825 &mu;s</td><td>0.2314 &mu;s</td><td>0.2165 &mu;s</td><td>35.831 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_MultiThreadChunk</td><td>100000</td><td>0</td><td>37.875 &mu;s</td><td>0.7438 &mu;s</td><td>0.8855 &mu;s</td><td>38.023 &mu;s</td><td>1.2817</td><td>0.0610</td><td>21504 B</td>
+</tr><tr><td>HypEcs_MultiThread</td><td>100000</td><td>0</td><td>38.358 &mu;s</td><td>0.3935 &mu;s</td><td>0.3681 &mu;s</td><td>38.483 &mu;s</td><td>0.0610</td><td>-</td><td>1872 B</td>
+</tr><tr><td>Myriad_SingleThreadChunk</td><td>100000</td><td>0</td><td>42.853 &mu;s</td><td>0.3008 &mu;s</td><td>0.2813 &mu;s</td><td>42.880 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_Job</td><td>100000</td><td>10</td><td>45.790 &mu;s</td><td>0.6204 &mu;s</td><td>1.1028 &mu;s</td><td>45.978 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FrifloEngineEcs_MonoThread</td><td>100000</td><td>10</td><td>47.223 &mu;s</td><td>0.5390 &mu;s</td><td>0.5042 &mu;s</td><td>47.149 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FlecsNet_Iter</td><td>100000</td><td>10</td><td>51.027 &mu;s</td><td>0.5943 &mu;s</td><td>0.5559 &mu;s</td><td>50.873 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MonoThread</td><td>100000</td><td>10</td><td>52.086 &mu;s</td><td>0.9742 &mu;s</td><td>0.9112 &mu;s</td><td>52.182 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FrifloEngineEcs_MonoThread</td><td>100000</td><td>0</td><td>52.302 &mu;s</td><td>0.4038 &mu;s</td><td>0.3777 &mu;s</td><td>52.291 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MonoThread_SourceGenerated</td><td>100000</td><td>10</td><td>52.394 &mu;s</td><td>0.3118 &mu;s</td><td>0.2917 &mu;s</td><td>52.400 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_ForEach</td><td>100000</td><td>10</td><td>52.719 &mu;s</td><td>1.0382 &mu;s</td><td>1.3129 &mu;s</td><td>52.517 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Exanite</td><td>100000</td><td>10</td><td>53.545 &mu;s</td><td>0.7407 &mu;s</td><td>0.6928 &mu;s</td><td>53.659 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_Raw</td><td>100000</td><td>10</td><td>56.791 &mu;s</td><td>0.7917 &mu;s</td><td>0.7406 &mu;s</td><td>56.729 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SveltoECS</td><td>100000</td><td>0</td><td>57.764 &mu;s</td><td>0.3328 &mu;s</td><td>0.3113 &mu;s</td><td>57.751 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_ForEach</td><td>100000</td><td>0</td><td>58.897 &mu;s</td><td>0.6035 &mu;s</td><td>0.5645 &mu;s</td><td>59.039 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_SingleThread</td><td>100000</td><td>10</td><td>60.326 &mu;s</td><td>1.1755 &mu;s</td><td>0.9178 &mu;s</td><td>60.341 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MonoThread</td><td>100000</td><td>0</td><td>62.398 &mu;s</td><td>0.5193 &mu;s</td><td>0.4603 &mu;s</td><td>62.440 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_Job</td><td>100000</td><td>0</td><td>62.668 &mu;s</td><td>1.2453 &mu;s</td><td>1.9751 &mu;s</td><td>63.287 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Fennecs_Raw</td><td>100000</td><td>0</td><td>64.828 &mu;s</td><td>0.3429 &mu;s</td><td>0.3040 &mu;s</td><td>64.739 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_SingleThread</td><td>100000</td><td>0</td><td>65.708 &mu;s</td><td>0.4379 &mu;s</td><td>0.4096 &mu;s</td><td>65.741 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MonoThread_SourceGenerated</td><td>100000</td><td>0</td><td>66.205 &mu;s</td><td>0.5840 &mu;s</td><td>0.5463 &mu;s</td><td>66.045 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Exanite</td><td>100000</td><td>0</td><td>66.744 &mu;s</td><td>0.5864 &mu;s</td><td>0.5486 &mu;s</td><td>66.667 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FlecsNet_Iter</td><td>100000</td><td>0</td><td>67.376 &mu;s</td><td>0.6352 &mu;s</td><td>0.5631 &mu;s</td><td>67.249 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MultiThread</td><td>100000</td><td>10</td><td>74.911 &mu;s</td><td>1.4857 &mu;s</td><td>1.7686 &mu;s</td><td>74.795 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Arch_MultiThread</td><td>100000</td><td>0</td><td>85.758 &mu;s</td><td>1.6926 &mu;s</td><td>1.6623 &mu;s</td><td>85.485 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_Delegate</td><td>100000</td><td>10</td><td>101.697 &mu;s</td><td>1.9685 &mu;s</td><td>4.0654 &mu;s</td><td>100.432 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FlecsNet_Each</td><td>100000</td><td>0</td><td>126.489 &mu;s</td><td>0.8951 &mu;s</td><td>0.7935 &mu;s</td><td>126.453 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_Delegate</td><td>100000</td><td>0</td><td>127.688 &mu;s</td><td>1.1786 &mu;s</td><td>1.1025 &mu;s</td><td>127.695 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>DefaultEcs_MonoThread</td><td>100000</td><td>0</td><td>154.723 &mu;s</td><td>1.8353 &mu;s</td><td>1.7168 &mu;s</td><td>154.448 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_Enumerable</td><td>100000</td><td>10</td><td>159.742 &mu;s</td><td>2.3158 &mu;s</td><td>2.1662 &mu;s</td><td>159.377 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>DefaultEcs_MonoThread</td><td>100000</td><td>10</td><td>161.305 &mu;s</td><td>3.1631 &mu;s</td><td>3.8846 &mu;s</td><td>161.220 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>LeopotamEcs</td><td>100000</td><td>10</td><td>170.654 &mu;s</td><td>1.3624 &mu;s</td><td>1.2744 &mu;s</td><td>170.746 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>LeopotamEcs</td><td>100000</td><td>0</td><td>185.343 &mu;s</td><td>2.0800 &mu;s</td><td>1.9457 &mu;s</td><td>184.883 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_Enumerable</td><td>100000</td><td>0</td><td>197.967 &mu;s</td><td>1.7501 &mu;s</td><td>1.6370 &mu;s</td><td>197.952 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>FlecsNet_Each</td><td>100000</td><td>10</td><td>201.441 &mu;s</td><td>11.2982 &mu;s</td><td>33.3129 &mu;s</td><td>213.613 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>LeopotamEcsLite</td><td>100000</td><td>10</td><td>215.863 &mu;s</td><td>3.6426 &mu;s</td><td>3.4073 &mu;s</td><td>215.972 &mu;s</td><td>-</td><td>-</td><td>1 B</td>
+</tr><tr><td>Myriad_MultiThread</td><td>100000</td><td>10</td><td>217.291 &mu;s</td><td>4.2762 &mu;s</td><td>4.9245 &mu;s</td><td>217.305 &mu;s</td><td>2.6855</td><td>0.2441</td><td>48789 B</td>
+</tr><tr><td>LeopotamEcsLite</td><td>100000</td><td>0</td><td>230.684 &mu;s</td><td>2.7720 &mu;s</td><td>2.5929 &mu;s</td><td>230.891 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Myriad_MultiThread</td><td>100000</td><td>0</td><td>233.188 &mu;s</td><td>3.9615 &mu;s</td><td>3.7056 &mu;s</td><td>233.502 &mu;s</td><td>2.9297</td><td>0.2441</td><td>49494 B</td>
+</tr><tr><td>RelEcs</td><td>100000</td><td>0</td><td>307.247 &mu;s</td><td>4.6159 &mu;s</td><td>4.3177 &mu;s</td><td>307.204 &mu;s</td><td>-</td><td>-</td><td>168 B</td>
+</tr><tr><td>RelEcs</td><td>100000</td><td>10</td><td>314.730 &mu;s</td><td>2.6960 &mu;s</td><td>2.5219 &mu;s</td><td>314.585 &mu;s</td><td>-</td><td>-</td><td>169 B</td>
+</tr><tr><td>SveltoECS</td><td>100000</td><td>10</td><td>317.559 &mu;s</td><td>1.9942 &mu;s</td><td>1.8654 &mu;s</td><td>317.572 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>MonoGameExtended</td><td>100000</td><td>0</td><td>412.855 &mu;s</td><td>4.4879 &mu;s</td><td>3.9784 &mu;s</td><td>413.023 &mu;s</td><td>-</td><td>-</td><td>161 B</td>
+</tr><tr><td>MonoGameExtended</td><td>100000</td><td>10</td><td>832.064 &mu;s</td><td>16.4156 &mu;s</td><td>24.5701 &mu;s</td><td>820.643 &mu;s</td><td>-</td><td>-</td><td>162 B</td>
+</tr><tr><td>Morpeh_Stash</td><td>100000</td><td>0</td><td>902.589 &mu;s</td><td>14.3071 &mu;s</td><td>13.3829 &mu;s</td><td>895.721 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>DefaultEcs_MultiThread</td><td>100000</td><td>10</td><td>1,002.056 &mu;s</td><td>380.0814 &mu;s</td><td>1,114.7130 &mu;s</td><td>438.282 &mu;s</td><td>-</td><td>-</td><td>3 B</td>
+</tr><tr><td>FrifloEngineEcs_MultiThread</td><td>100000</td><td>10</td><td>1,387.933 &mu;s</td><td>545.8216 &mu;s</td><td>1,609.3673 &mu;s</td><td>654.843 &mu;s</td><td>-</td><td>-</td><td>11 B</td>
+</tr><tr><td>Morpeh_Direct</td><td>100000</td><td>0</td><td>1,557.963 &mu;s</td><td>20.5389 &mu;s</td><td>18.2072 &mu;s</td><td>1,553.260 &mu;s</td><td>-</td><td>-</td><td>1 B</td>
+</tr><tr><td>DefaultEcs_MultiThread</td><td>100000</td><td>0</td><td>2,467.100 &mu;s</td><td>185.0165 &mu;s</td><td>536.7666 &mu;s</td><td>2,524.915 &mu;s</td><td>-</td><td>-</td><td>4 B</td>
+</tr><tr><td>FrifloEngineEcs_MultiThread</td><td>100000</td><td>0</td><td>3,038.741 &mu;s</td><td>371.4157 &mu;s</td><td>1,095.1277 &mu;s</td><td>3,227.978 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Morpeh_Stash</td><td>100000</td><td>10</td><td>4,989.963 &mu;s</td><td>97.4959 &mu;s</td><td>145.9273 &mu;s</td><td>4,999.003 &mu;s</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Morpeh_Direct</td><td>100000</td><td>10</td><td>7,193.307 &mu;s</td><td>139.8514 &mu;s</td><td>233.6603 &mu;s</td><td>7,204.701 &mu;s</td><td>-</td><td>-</td><td>12 B</td>
+</tr></tbody></table>
+</body>
+</html>
