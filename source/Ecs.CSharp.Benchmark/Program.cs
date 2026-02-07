@@ -1,5 +1,6 @@
 ﻿#pragma warning disable CA1852 // Seal internal types
 
+using System;
 using System.Globalization;
 using System.Linq;
 using BenchmarkDotNet.Configs;
@@ -61,6 +62,11 @@ IConfig configuration = DefaultConfig.Instance
 
         // Exanite only
         if (!benchmarkCase.Descriptor.HasCategory(Categories.Exanite))
+        {
+            return false;
+        }
+
+        if (!benchmarkCase.Descriptor.Type.Name.Contains("SystemWith", StringComparison.Ordinal))
         {
             return false;
         }
