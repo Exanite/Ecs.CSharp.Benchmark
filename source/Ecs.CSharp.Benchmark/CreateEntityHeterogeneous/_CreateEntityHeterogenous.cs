@@ -3,7 +3,6 @@
 namespace Ecs.CSharp.Benchmark
 {
     [BenchmarkCategory(Categories.CreateEntity)]
-    [MemoryDiagnoser]
     public partial class CreateEntityHeterogeneous
     {
         [Params(100000)]

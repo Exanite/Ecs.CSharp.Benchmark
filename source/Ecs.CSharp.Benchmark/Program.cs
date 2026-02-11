@@ -39,6 +39,7 @@ IConfig configuration = DefaultConfig.Instance
         HardwareCounter.LlcReference,
         HardwareCounter.BranchMispredictions,
         HardwareCounter.InstructionRetired)
+    .AddDiagnoser(new MemoryDiagnoser(new MemoryDiagnoserConfig()))
     // .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig()))
     .AddFilter(new SimpleFilter(benchmarkCase =>
     {
