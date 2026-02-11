@@ -25,6 +25,9 @@
         public const string SingleThreaded = "SingleThreaded";
         public const string MultiThreaded = "MultiThreaded";
 
+        public const string DirectModification = "DirectModification";
+        public const string DeferredModification = "DeferredModification";
+
         public const string Simd = "Simd";
     }
 }
