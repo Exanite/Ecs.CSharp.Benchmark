@@ -68,7 +68,7 @@ IConfig configuration = DefaultConfig.Instance
             return false;
         }
 
-        if (!benchmarkCase.Descriptor.Type.Name.Contains("CreateEntityHeterogeneous", StringComparison.Ordinal))
+        if (!benchmarkCase.Descriptor.Type.Name.Contains("CreateEntity", StringComparison.Ordinal))
         {
             return false;
         }
