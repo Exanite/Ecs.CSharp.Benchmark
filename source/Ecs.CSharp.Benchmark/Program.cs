@@ -22,12 +22,13 @@ BenchmarkSwitcher benchmark = BenchmarkSwitcher.FromTypes(new[]
     typeof(CreateEntityWithOneComponent),
     typeof(CreateEntityWithTwoComponents),
     typeof(CreateEntityWithThreeComponents),
+    typeof(CreateEntityHeterogeneous),
 
     typeof(SystemWithOneComponent),
     typeof(SystemWithTwoComponents),
     typeof(SystemWithThreeComponents),
 
-    typeof(SystemWithTwoComponentsMultipleComposition)
+    typeof(SystemWithTwoComponentsMultipleComposition),
 });
 
 IConfig configuration = DefaultConfig.Instance
