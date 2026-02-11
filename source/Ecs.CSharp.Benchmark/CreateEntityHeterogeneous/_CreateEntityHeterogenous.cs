@@ -3,7 +3,7 @@
 namespace Ecs.CSharp.Benchmark
 {
     [BenchmarkCategory(Categories.CreateEntity)]
-    public partial class CreateEntityWithThreeComponents
+    public partial class CreateEntityHeterogeneous
     {
         [Params(100000)]
         public int EntityCount { get; set; }

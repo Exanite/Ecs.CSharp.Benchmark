@@ -5,6 +5,7 @@ using Exanite.Engine.Ecs.Queries;
 
 namespace Ecs.CSharp.Benchmark
 {
+    [CachedQueries(true)]
     public partial class SystemWithTwoComponents
     {
         [Context]

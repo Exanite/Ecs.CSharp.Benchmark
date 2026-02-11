@@ -3,7 +3,6 @@
 namespace Ecs.CSharp.Benchmark
 {
     [BenchmarkCategory(Categories.System)]
-    [MemoryDiagnoser]
     public partial class SystemWithTwoComponentsMultipleComposition
     {
         [Params(100000)]

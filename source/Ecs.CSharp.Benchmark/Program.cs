@@ -22,12 +22,13 @@ BenchmarkSwitcher benchmark = BenchmarkSwitcher.FromTypes(new[]
     typeof(CreateEntityWithOneComponent),
     typeof(CreateEntityWithTwoComponents),
     typeof(CreateEntityWithThreeComponents),
+    typeof(CreateEntityHeterogeneous),
 
     typeof(SystemWithOneComponent),
     typeof(SystemWithTwoComponents),
     typeof(SystemWithThreeComponents),
 
-    typeof(SystemWithTwoComponentsMultipleComposition)
+    typeof(SystemWithTwoComponentsMultipleComposition),
 });
 
 IConfig configuration = DefaultConfig.Instance
@@ -39,7 +40,8 @@ IConfig configuration = DefaultConfig.Instance
         HardwareCounter.LlcReference,
         HardwareCounter.BranchMispredictions,
         HardwareCounter.InstructionRetired)
-    .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig()))
+    .AddDiagnoser(new MemoryDiagnoser(new MemoryDiagnoserConfig()))
+    // .AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig()))
     .AddFilter(new SimpleFilter(benchmarkCase =>
     {
         // Skip non-zero entity padding
@@ -66,7 +68,7 @@ IConfig configuration = DefaultConfig.Instance
             return false;
         }
 
-        if (!benchmarkCase.Descriptor.Type.Name.Contains("SystemWith", StringComparison.Ordinal))
+        if (!benchmarkCase.Descriptor.Type.Name.Contains("CreateEntity", StringComparison.Ordinal))
         {
             return false;
         }
