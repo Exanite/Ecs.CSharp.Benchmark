@@ -11,7 +11,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly TinyEcsBaseContext _tinyEcs;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.TinyEcs, Categories.SingleThreaded, Categories.DirectModification)]
         public void TinyEcs()
         {
             for (int i = 0; i < EntityCount; ++i)

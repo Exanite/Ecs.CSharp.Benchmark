@@ -14,7 +14,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly FrentBaseContext _frent;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded, Categories.DirectModification)]
         public void Frent()
         {
             World world = _frent.World;
@@ -25,7 +25,7 @@ namespace Ecs.CSharp.Benchmark
         }
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Frent, Categories.SingleThreaded, Categories.DirectModification)]
         public void Frent_Bulk()
         {
             World world = _frent.World;

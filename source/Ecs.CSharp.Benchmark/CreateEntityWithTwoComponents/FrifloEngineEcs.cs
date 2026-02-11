@@ -7,7 +7,7 @@ namespace Ecs.CSharp.Benchmark
     public partial class CreateEntityWithTwoComponents
     {
         [Benchmark]
-        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.FrifloEngineEcs, Categories.SingleThreaded, Categories.DirectModification)]
         public void FrifloEngineEcs()
         {
             EntityStore store = new EntityStore(PidType.UsePidAsId);

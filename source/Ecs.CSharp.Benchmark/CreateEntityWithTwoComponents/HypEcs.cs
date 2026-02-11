@@ -8,7 +8,7 @@ namespace Ecs.CSharp.Benchmark
         [Context] private readonly HypEcsBaseContext _hypEcs;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.HypEcs, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.HypEcs, Categories.SingleThreaded, Categories.DirectModification)]
         public void HypEcs()
         {
             for (int i = 0; i < EntityCount; ++i)

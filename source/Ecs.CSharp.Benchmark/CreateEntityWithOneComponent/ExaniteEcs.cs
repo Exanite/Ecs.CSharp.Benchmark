@@ -10,7 +10,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly ExaniteBaseContext _exanite;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.Exanite, Categories.SingleThreaded, Categories.DeferredModification)]
         public void Exanite()
         {
             for (int i = 0; i < EntityCount; ++i)

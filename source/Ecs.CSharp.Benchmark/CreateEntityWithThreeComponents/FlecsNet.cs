@@ -11,7 +11,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly FlecsNetBaseContext _flecs;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.FlecsNet, Categories.SingleThreaded, Categories.DirectModification)]
         public void FlecsNet()
         {
             World world = _flecs.World;

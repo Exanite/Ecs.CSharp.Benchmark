@@ -13,7 +13,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly SveltoECSBaseContext _sveltoECS;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.SveltoECS, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.SveltoECS, Categories.SingleThreaded, Categories.DeferredModification)]
         public void SveltoECS()
         {
             for (int i = 0; i < EntityCount; ++i)

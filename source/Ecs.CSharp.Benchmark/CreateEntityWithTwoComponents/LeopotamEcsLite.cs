@@ -10,7 +10,7 @@ namespace Ecs.CSharp.Benchmark
         private readonly LeopotamEcsLiteBaseContext _leopotamEcsLite;
 
         [Benchmark]
-        [BenchmarkCategory(Categories.LeopotamEcsLite, Categories.SingleThreaded)]
+        [BenchmarkCategory(Categories.LeopotamEcsLite, Categories.SingleThreaded, Categories.DirectModification)]
         public void LeopotamEcsLite()
         {
             EcsPool<LeopotamEcsLiteBaseContext.Component1> c1 = _leopotamEcsLite.World.GetPool<LeopotamEcsLiteBaseContext.Component1>();
